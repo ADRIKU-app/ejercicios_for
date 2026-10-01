@@ -5,7 +5,7 @@ function listaNumeros(){
 }
 
 function ejecutar(numEjercicio){
-    if(numEjercicio==1){
+    /*if(numEjercicio==1){
         listaNumeros();
     }else if(numEjercicio==2){
         listarNumerosReversa();
@@ -13,6 +13,23 @@ function ejecutar(numEjercicio){
         listarPares();
     }else if(numEjercicio==4){
         listarImpares();
+    }*/
+    //Se reemplaza con Switch case
+    switch(numEjercicio){
+        case 1:
+            listaNumeros();
+            break;
+        case 2:
+            listarNumerosReversa();
+            break;
+        case 3:
+            listarPares();
+            break;
+        case 4:
+            listarImpares();
+            break;
+        default:
+            console.log("No existe el ejercicio");
     }
 }
 
