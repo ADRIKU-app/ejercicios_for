@@ -14,31 +14,21 @@ html {
 
 body {
     min-height: 100vh;
-
     font-family: 'Fredoka', sans-serif;
-
     display: flex;
-
-    /* Coloca el contenido de arriba hacia abajo */
     flex-direction: column;
-
-    /* Centra horizontalmente */
     align-items: center;
-
     padding: 40px 15px 20px;
-
     background:
         linear-gradient(
             rgba(103, 214, 255, 0.78),
             rgba(255, 215, 90, 0.82)
         ),
         url("https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1600&q=80");
-
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
 }
-
 
 /* =========================
    CONTENEDOR PRINCIPAL
@@ -47,15 +37,10 @@ body {
 .contenedor {
     width: 100%;
     max-width: 560px;
-
     text-align: center;
-
-    /* Ocupa el espacio disponible */
     flex: 1;
-
     animation: aparecer 0.8s ease;
 }
-
 
 /* =========================
    BOTÓN PROBAR
@@ -63,62 +48,40 @@ body {
 
 .boton {
     display: inline-block;
-
     background: linear-gradient(
         135deg,
         #ff4d8d,
         #ff8a3d
     );
-
     color: white;
-
     text-decoration: none;
-
     font-size: 22px;
     font-weight: 700;
-
     letter-spacing: 2px;
-
     padding: 15px 40px;
-
     border-radius: 50px;
-
     margin-bottom: 25px;
-
     border: 4px solid white;
-
     box-shadow:
         0 8px 0 #d93371,
         0 12px 20px rgba(0, 0, 0, 0.22);
-
     transition:
         transform 0.2s ease,
         box-shadow 0.2s ease;
-
     animation: flotar 2.5s infinite ease-in-out;
 }
 
-
-/* Efecto al pasar el mouse */
-
 .boton:hover {
     transform: translateY(-5px) scale(1.06);
-
     box-shadow:
         0 10px 0 #d93371,
         0 15px 25px rgba(0, 0, 0, 0.25);
 }
 
-
-/* Efecto al hacer clic */
-
 .boton:active {
     transform: translateY(5px);
-
-    box-shadow:
-        0 3px 0 #d93371;
+    box-shadow: 0 3px 0 #d93371;
 }
-
 
 /* =========================
    TARJETA
@@ -126,69 +89,44 @@ body {
 
 .tarjeta {
     position: relative;
-
     overflow: hidden;
-
     background:
         linear-gradient(
             145deg,
             rgba(255, 255, 255, 0.97),
             rgba(255, 248, 215, 0.97)
         );
-
     padding: 30px;
-
     border-radius: 30px;
-
     border: 6px solid white;
-
     box-shadow:
         0 15px 0 rgba(74, 162, 255, 0.35),
         0 25px 40px rgba(0, 0, 0, 0.2);
 }
 
-
-/* Círculo decorativo */
-
 .tarjeta::before {
     content: "";
-
     position: absolute;
-
     width: 120px;
     height: 120px;
-
     border-radius: 50%;
-
     background: #ffdd4a;
-
     top: -50px;
     right: -40px;
-
     opacity: 0.8;
 }
-
-
-/* Segundo círculo decorativo */
 
 .tarjeta::after {
     content: "";
-
     position: absolute;
-
     width: 80px;
     height: 80px;
-
     border-radius: 50%;
-
     background: #67e8a5;
-
     bottom: -30px;
     left: -25px;
-
     opacity: 0.8;
 }
-
 
 /* =========================
    TÍTULO
@@ -196,29 +134,16 @@ body {
 
 h1 {
     position: relative;
-
     z-index: 2;
-
     color: #6247d7;
-
     font-size: 38px;
-
     margin-bottom: 25px;
-
     font-weight: 700;
-
     text-shadow:
         2px 2px 0 #ffda55,
         4px 4px 0 rgba(255, 105, 150, 0.25);
-
     animation: titulo 1s ease;
 }
-
-
-/*
-   Agrega estrellas alrededor
-   del título sin modificar HTML.
-*/
 
 h1::before {
     content: "⭐ ";
@@ -235,179 +160,128 @@ h1::after {
 .tabla-div {
     position: relative;
     z-index: 2;
-
     width: 100%;
-
     display: flex;
     flex-direction: column;
-
     gap: 8px;
-
     font-size: 18px;
 }
-
-
-/* =========================
-   FILAS
-   ========================= */
-
-.fila {
-    display: grid;
-
-    grid-template-columns: 1fr 1fr;
-
-    width: 100%;
-
-    transition:
-        transform 0.2s ease,
-        box-shadow 0.2s ease;
-}
-
-
-/* =========================
-   CELDAS
-   ========================= */
-
-.celda {
-    padding: 13px;
-
-    font-size: 19px;
-    font-weight: 600;
-
-    color: #444;
-
-    text-align: center;
-
-    transition:
-        color 0.2s ease,
-        background-color 0.2s ease;
-}
-
-
-/* Primera celda */
-
-.fila .celda:first-child {
-    border-radius: 14px 0 0 14px;
-}
-
-
-/* Última celda */
-
-.fila .celda:last-child {
-    border-radius: 0 14px 14px 0;
-}
-
 
 /* =========================
    ENCABEZADO
    ========================= */
 
+.encabezado {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+}
+
 .encabezado .celda {
     padding: 15px;
-
     background: linear-gradient(
         135deg,
         #6c63ff,
         #9c6dff
     );
-
     color: white;
-
     font-size: 19px;
     font-weight: 700;
+    text-align: center;
 }
 
+.encabezado .celda:first-child {
+    border-radius: 14px 0 0 14px;
+}
+
+.encabezado .celda:last-child {
+    border-radius: 0 14px 14px 0;
+}
 
 /* =========================
-   RESULTADOS
+   CONTENIDO DE LA TABLA
    ========================= */
 
-.resultado {
-    color: #ff477e;
-
-    font-size: 21px;
-    font-weight: 700;
+.tabla {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
 }
 
+.tabla .fila {
+    width: 100%;
+    padding: 13px;
+    border-radius: 14px;
+    color: #444;
+    font-size: 19px;
+    font-weight: 600;
+    text-align: center;
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        color 0.2s ease;
+}
 
 /* =========================
    COLORES DE LAS FILAS
    ========================= */
 
-/*
-La fila 1 es el encabezado,
-por eso empezamos desde nth-child(2)
-*/
-
-.fila:nth-child(2) .celda {
+.tabla .fila:nth-child(1) {
     background-color: #fff3a8;
 }
 
-.fila:nth-child(3) .celda {
+.tabla .fila:nth-child(2) {
     background-color: #bff4ff;
 }
 
-.fila:nth-child(4) .celda {
+.tabla .fila:nth-child(3) {
     background-color: #ffc5dd;
 }
 
-.fila:nth-child(5) .celda {
+.tabla .fila:nth-child(4) {
     background-color: #caffbf;
 }
 
-.fila:nth-child(6) .celda {
+.tabla .fila:nth-child(5) {
     background-color: #ffd6a5;
 }
 
-.fila:nth-child(7) .celda {
+.tabla .fila:nth-child(6) {
     background-color: #d8c4ff;
 }
 
-.fila:nth-child(8) .celda {
+.tabla .fila:nth-child(7) {
     background-color: #a9f4df;
 }
 
-.fila:nth-child(9) .celda {
+.tabla .fila:nth-child(8) {
     background-color: #ffd1aa;
 }
 
-.fila:nth-child(10) .celda {
+.tabla .fila:nth-child(9) {
     background-color: #c9ddff;
 }
 
-.fila:nth-child(11) .celda {
+.tabla .fila:nth-child(10) {
     background-color: #fff0a8;
 }
-
 
 /* =========================
    EFECTO HOVER
    ========================= */
 
-.fila:not(.encabezado):hover {
+.tabla .fila:hover {
     transform: scale(1.04);
-
-    box-shadow:
-        0 5px 12px rgba(0, 0, 0, 0.15);
-}
-
-.fila:not(.encabezado):hover .celda {
     color: #5629bd;
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.15);
 }
-
-.fila:not(.encabezado):hover .resultado {
-    color: #ff477e;
-}
-
 
 /* =========================
    ANIMACIONES
    ========================= */
 
-/* Entrada de la página */
-
 @keyframes aparecer {
-
     from {
         opacity: 0;
         transform: translateY(30px);
@@ -419,11 +293,7 @@ por eso empezamos desde nth-child(2)
     }
 }
 
-
-/* Movimiento suave del botón */
-
 @keyframes flotar {
-
     0%,
     100% {
         transform: translateY(0);
@@ -434,11 +304,7 @@ por eso empezamos desde nth-child(2)
     }
 }
 
-
-/* Entrada del título */
-
 @keyframes titulo {
-
     0% {
         transform: scale(0.6) rotate(-5deg);
         opacity: 0;
@@ -454,13 +320,11 @@ por eso empezamos desde nth-child(2)
     }
 }
 
-
 /* =========================
    RESPONSIVE - TABLETS
    ========================= */
 
 @media (max-width: 768px) {
-
     body {
         padding: 25px 15px;
     }
@@ -474,69 +338,52 @@ por eso empezamos desde nth-child(2)
     }
 }
 
-
 /* =========================
    RESPONSIVE - CELULARES
    ========================= */
 
 @media (max-width: 480px) {
-
     body {
         padding: 20px 10px;
     }
 
     .tarjeta {
         padding: 20px 13px;
-
         border-radius: 22px;
     }
 
     h1 {
         font-size: 28px;
-
         margin-bottom: 18px;
     }
 
     .boton {
         width: 100%;
-
         font-size: 19px;
-
         padding: 14px 20px;
     }
 
-    .tabla-div {
-    gap: 6px;
-    }
-
-    .celda {
-    font-size: 16px;
-    padding: 11px 5px;
+    .tabla-div,
+    .tabla {
+        gap: 6px;
     }
 
     .encabezado .celda {
-    font-size: 16px;
-    padding: 12px 5px;
+        font-size: 16px;
+        padding: 12px 5px;
     }
 
-    .resultado {
-    font-size: 18px;
+    .tabla .fila {
+        font-size: 16px;
+        padding: 11px 5px;
     }
 }
-
 
 /* =========================
    ACCESIBILIDAD
    ========================= */
 
-/*
-   Si el usuario tiene desactivadas
-   las animaciones en su dispositivo,
-   también las quitamos aquí.
-*/
-
 @media (prefers-reduced-motion: reduce) {
-
     *,
     *::before,
     *::after {
@@ -551,36 +398,25 @@ por eso empezamos desde nth-child(2)
 
 .pie-pagina {
     margin-top: 35px;
-
     padding: 14px 25px;
-
     background: linear-gradient(
         135deg,
         #ff8fc7,
         #ffad80,
         #ffd85c
     );
-
     border: 4px solid white;
     border-radius: 25px;
-
     box-shadow:
         0 7px 0 rgba(108, 99, 255, 0.35),
         0 12px 20px rgba(0, 0, 0, 0.15);
-
     font-size: 18px;
     font-weight: 600;
-
     color: white;
-
     width: fit-content;
     max-width: 100%;
-
     text-align: center;
-
-    text-shadow:
-        1px 1px 2px rgba(0, 0, 0, 0.25);
-
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.25);
     animation: aparecerPie 1s ease;
 }
 
@@ -590,23 +426,15 @@ por eso empezamos desde nth-child(2)
 
 .pie-pagina span {
     display: inline-block;
-
     color: #6247d7;
     background-color: #ffffff;
-
     padding: 5px 12px;
-
     margin-left: 5px;
-
     border-radius: 15px;
-
     font-size: 20px;
     font-weight: 700;
-
     letter-spacing: 1px;
-
     text-shadow: none;
-
     transition:
         transform 0.2s ease,
         background-color 0.2s ease;
@@ -629,10 +457,7 @@ por eso empezamos desde nth-child(2)
     }
 }
 
-/* Responsive */
-
 @media (max-width: 480px) {
-
     .pie-pagina {
         font-size: 15px;
         padding: 14px 10px;
