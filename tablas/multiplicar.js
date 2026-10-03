@@ -1,11 +1,26 @@
 function generarTablas() {
-    let valorCaja = document.getElementById("numero-tabla").value;
-    let contenedor = document.getElementById("contenedor");
-    let contenido = "";
+    const cajaNumero = document.getElementById("numero-tabla");
+    const resultadoTabla = document.getElementById("resultado-tabla");
+    const mensaje = document.getElementById("mensaje");
 
-    contenido += `
+    const valorCaja = cajaNumero.value.trim();
+    const numero = Number(valorCaja);
+
+    if (valorCaja === "") {
+        mensaje.textContent = "Escribe un número antes de presionar PROBAR.";
+        cajaNumero.focus();
+        return;
+    }
+
+    if (Number.isNaN(numero)) {
+        mensaje.textContent = "Ingresa solamente números, por ejemplo 3, 5 u 8.";
+        cajaNumero.focus();
+        return;
+    }
+
+    let contenido = `
         <section id="tabla" class="tarjeta">
-            <h1>Tabla del ${valorCaja}</h1>
+            <h2>Tabla del ${numero}</h2>
 
             <div class="tabla-div">
                 <div class="fila encabezado">
@@ -17,7 +32,11 @@ function generarTablas() {
     `;
 
     for (let i = 1; i <= 10; i++) {
-        contenido += `<div class="fila">${valorCaja} × ${i} = ${valorCaja * i}</div>`;
+        contenido += `
+            <div class="fila">
+                ${numero} × ${i} = ${numero * i}
+            </div>
+        `;
     }
 
     contenido += `
@@ -26,5 +45,6 @@ function generarTablas() {
         </section>
     `;
 
-    contenedor.innerHTML = contenido;
+    resultadoTabla.innerHTML = contenido;
+    mensaje.textContent = `¡Listo! Estás practicando la tabla del ${numero}.`;
 }
