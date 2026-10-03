@@ -1,6 +1,4 @@
-function generartablas(){
-
-    let contenedor = document.getElementById("probar");
-    contenedor.innerHTML = "<h1>Tabla del 3</h1>";
-
+function generarTablas() {
+    let contenedor = document.getElementById("contenedor");
+    contenedor.innerHTML = "<h1>PROBANDO</h1>";
 }
