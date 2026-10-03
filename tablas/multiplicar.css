@@ -228,32 +228,82 @@ h1::after {
     content: " ⭐";
 }
 
-
 /* =========================
-   TABLA
+   TABLA DEL 3 CON DIV
    ========================= */
 
-table {
+.tabla-div {
     position: relative;
-
     z-index: 2;
 
     width: 100%;
 
-    border-collapse: separate;
+    display: flex;
+    flex-direction: column;
 
-    border-spacing: 0 8px;
+    gap: 8px;
 
     font-size: 18px;
 }
 
 
-/* Encabezado */
+/* =========================
+   FILAS
+   ========================= */
 
-th {
+.fila {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    width: 100%;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+/* =========================
+   CELDAS
+   ========================= */
+
+.celda {
+    padding: 13px;
+
+    font-size: 19px;
+    font-weight: 600;
+
+    color: #444;
+
+    text-align: center;
+
+    transition:
+        color 0.2s ease,
+        background-color 0.2s ease;
+}
+
+
+/* Primera celda */
+
+.fila .celda:first-child {
+    border-radius: 14px 0 0 14px;
+}
+
+
+/* Última celda */
+
+.fila .celda:last-child {
+    border-radius: 0 14px 14px 0;
+}
+
+
+/* =========================
+   ENCABEZADO
+   ========================= */
+
+.encabezado .celda {
     padding: 15px;
-
-    color: white;
 
     background: linear-gradient(
         135deg,
@@ -261,53 +311,22 @@ th {
         #9c6dff
     );
 
-    font-size: 19px;
-}
-
-
-/* Redondeo encabezado */
-
-th:first-child {
-    border-radius: 15px 0 0 15px;
-}
-
-th:last-child {
-    border-radius: 0 15px 15px 0;
-}
-
-
-/* Celdas */
-
-td {
-    padding: 13px;
+    color: white;
 
     font-size: 19px;
-
-    font-weight: 600;
-
-    color: #444;
-
-    background-color: white;
-
-    transition:
-        transform 0.2s ease,
-        background-color 0.2s ease,
-        color 0.2s ease;
+    font-weight: 700;
 }
 
 
-/* Bordes redondeados */
+/* =========================
+   RESULTADOS
+   ========================= */
 
-td:first-child {
-    border-radius: 14px 0 0 14px;
-}
-
-td:last-child {
-    border-radius: 0 14px 14px 0;
-
+.resultado {
     color: #ff477e;
 
     font-size: 21px;
+    font-weight: 700;
 }
 
 
@@ -315,64 +334,69 @@ td:last-child {
    COLORES DE LAS FILAS
    ========================= */
 
-tbody tr:nth-child(1) td {
+/*
+La fila 1 es el encabezado,
+por eso empezamos desde nth-child(2)
+*/
+
+.fila:nth-child(2) .celda {
     background-color: #fff3a8;
 }
 
-tbody tr:nth-child(2) td {
+.fila:nth-child(3) .celda {
     background-color: #bff4ff;
 }
 
-tbody tr:nth-child(3) td {
+.fila:nth-child(4) .celda {
     background-color: #ffc5dd;
 }
 
-tbody tr:nth-child(4) td {
+.fila:nth-child(5) .celda {
     background-color: #caffbf;
 }
 
-tbody tr:nth-child(5) td {
+.fila:nth-child(6) .celda {
     background-color: #ffd6a5;
 }
 
-tbody tr:nth-child(6) td {
+.fila:nth-child(7) .celda {
     background-color: #d8c4ff;
 }
 
-tbody tr:nth-child(7) td {
+.fila:nth-child(8) .celda {
     background-color: #a9f4df;
 }
 
-tbody tr:nth-child(8) td {
+.fila:nth-child(9) .celda {
     background-color: #ffd1aa;
 }
 
-tbody tr:nth-child(9) td {
+.fila:nth-child(10) .celda {
     background-color: #c9ddff;
 }
 
-tbody tr:nth-child(10) td {
+.fila:nth-child(11) .celda {
     background-color: #fff0a8;
 }
 
 
 /* =========================
-   EFECTO SOBRE FILAS
+   EFECTO HOVER
    ========================= */
 
-tbody tr {
-    transition: transform 0.2s ease;
-}
-
-tbody tr:hover {
+.fila:not(.encabezado):hover {
     transform: scale(1.04);
-}
-
-tbody tr:hover td {
-    color: #5629bd;
 
     box-shadow:
         0 5px 12px rgba(0, 0, 0, 0.15);
+}
+
+.fila:not(.encabezado):hover .celda {
+    color: #5629bd;
+}
+
+.fila:not(.encabezado):hover .resultado {
+    color: #ff477e;
 }
 
 
@@ -481,26 +505,22 @@ tbody tr:hover td {
         padding: 14px 20px;
     }
 
-    table {
-        font-size: 16px;
-
-        border-spacing: 0 6px;
+    .tabla-div {
+    gap: 6px;
     }
 
-    th {
-        font-size: 16px;
-
-        padding: 12px 5px;
+    .celda {
+    font-size: 16px;
+    padding: 11px 5px;
     }
 
-    td {
-        font-size: 16px;
-
-        padding: 11px 5px;
+    .encabezado .celda {
+    font-size: 16px;
+    padding: 12px 5px;
     }
 
-    td:last-child {
-        font-size: 18px;
+    .resultado {
+    font-size: 18px;
     }
 }
 
