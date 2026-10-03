@@ -1,0 +1,625 @@
+/* Fuente infantil desde Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap');
+
+/* Reinicio básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+
+    font-family: 'Fredoka', sans-serif;
+
+    display: flex;
+
+    /* Coloca el contenido de arriba hacia abajo */
+    flex-direction: column;
+
+    /* Centra horizontalmente */
+    align-items: center;
+
+    padding: 40px 15px 20px;
+
+    background:
+        linear-gradient(
+            rgba(103, 214, 255, 0.78),
+            rgba(255, 215, 90, 0.82)
+        ),
+        url("https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1600&q=80");
+
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+
+/* =========================
+   CONTENEDOR PRINCIPAL
+   ========================= */
+
+.contenedor {
+    width: 100%;
+    max-width: 560px;
+
+    text-align: center;
+
+    /* Ocupa el espacio disponible */
+    flex: 1;
+
+    animation: aparecer 0.8s ease;
+}
+
+
+/* =========================
+   BOTÓN PROBAR
+   ========================= */
+
+.boton {
+    display: inline-block;
+
+    background: linear-gradient(
+        135deg,
+        #ff4d8d,
+        #ff8a3d
+    );
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 22px;
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    padding: 15px 40px;
+
+    border-radius: 50px;
+
+    margin-bottom: 25px;
+
+    border: 4px solid white;
+
+    box-shadow:
+        0 8px 0 #d93371,
+        0 12px 20px rgba(0, 0, 0, 0.22);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+
+    animation: flotar 2.5s infinite ease-in-out;
+}
+
+
+/* Efecto al pasar el mouse */
+
+.boton:hover {
+    transform: translateY(-5px) scale(1.06);
+
+    box-shadow:
+        0 10px 0 #d93371,
+        0 15px 25px rgba(0, 0, 0, 0.25);
+}
+
+
+/* Efecto al hacer clic */
+
+.boton:active {
+    transform: translateY(5px);
+
+    box-shadow:
+        0 3px 0 #d93371;
+}
+
+
+/* =========================
+   TARJETA
+   ========================= */
+
+.tarjeta {
+    position: relative;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 255, 255, 0.97),
+            rgba(255, 248, 215, 0.97)
+        );
+
+    padding: 30px;
+
+    border-radius: 30px;
+
+    border: 6px solid white;
+
+    box-shadow:
+        0 15px 0 rgba(74, 162, 255, 0.35),
+        0 25px 40px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Círculo decorativo */
+
+.tarjeta::before {
+    content: "";
+
+    position: absolute;
+
+    width: 120px;
+    height: 120px;
+
+    border-radius: 50%;
+
+    background: #ffdd4a;
+
+    top: -50px;
+    right: -40px;
+
+    opacity: 0.8;
+}
+
+
+/* Segundo círculo decorativo */
+
+.tarjeta::after {
+    content: "";
+
+    position: absolute;
+
+    width: 80px;
+    height: 80px;
+
+    border-radius: 50%;
+
+    background: #67e8a5;
+
+    bottom: -30px;
+    left: -25px;
+
+    opacity: 0.8;
+}
+
+
+/* =========================
+   TÍTULO
+   ========================= */
+
+h1 {
+    position: relative;
+
+    z-index: 2;
+
+    color: #6247d7;
+
+    font-size: 38px;
+
+    margin-bottom: 25px;
+
+    font-weight: 700;
+
+    text-shadow:
+        2px 2px 0 #ffda55,
+        4px 4px 0 rgba(255, 105, 150, 0.25);
+
+    animation: titulo 1s ease;
+}
+
+
+/*
+   Agrega estrellas alrededor
+   del título sin modificar HTML.
+*/
+
+h1::before {
+    content: "⭐ ";
+}
+
+h1::after {
+    content: " ⭐";
+}
+
+
+/* =========================
+   TABLA
+   ========================= */
+
+table {
+    position: relative;
+
+    z-index: 2;
+
+    width: 100%;
+
+    border-collapse: separate;
+
+    border-spacing: 0 8px;
+
+    font-size: 18px;
+}
+
+
+/* Encabezado */
+
+th {
+    padding: 15px;
+
+    color: white;
+
+    background: linear-gradient(
+        135deg,
+        #6c63ff,
+        #9c6dff
+    );
+
+    font-size: 19px;
+}
+
+
+/* Redondeo encabezado */
+
+th:first-child {
+    border-radius: 15px 0 0 15px;
+}
+
+th:last-child {
+    border-radius: 0 15px 15px 0;
+}
+
+
+/* Celdas */
+
+td {
+    padding: 13px;
+
+    font-size: 19px;
+
+    font-weight: 600;
+
+    color: #444;
+
+    background-color: white;
+
+    transition:
+        transform 0.2s ease,
+        background-color 0.2s ease,
+        color 0.2s ease;
+}
+
+
+/* Bordes redondeados */
+
+td:first-child {
+    border-radius: 14px 0 0 14px;
+}
+
+td:last-child {
+    border-radius: 0 14px 14px 0;
+
+    color: #ff477e;
+
+    font-size: 21px;
+}
+
+
+/* =========================
+   COLORES DE LAS FILAS
+   ========================= */
+
+tbody tr:nth-child(1) td {
+    background-color: #fff3a8;
+}
+
+tbody tr:nth-child(2) td {
+    background-color: #bff4ff;
+}
+
+tbody tr:nth-child(3) td {
+    background-color: #ffc5dd;
+}
+
+tbody tr:nth-child(4) td {
+    background-color: #caffbf;
+}
+
+tbody tr:nth-child(5) td {
+    background-color: #ffd6a5;
+}
+
+tbody tr:nth-child(6) td {
+    background-color: #d8c4ff;
+}
+
+tbody tr:nth-child(7) td {
+    background-color: #a9f4df;
+}
+
+tbody tr:nth-child(8) td {
+    background-color: #ffd1aa;
+}
+
+tbody tr:nth-child(9) td {
+    background-color: #c9ddff;
+}
+
+tbody tr:nth-child(10) td {
+    background-color: #fff0a8;
+}
+
+
+/* =========================
+   EFECTO SOBRE FILAS
+   ========================= */
+
+tbody tr {
+    transition: transform 0.2s ease;
+}
+
+tbody tr:hover {
+    transform: scale(1.04);
+}
+
+tbody tr:hover td {
+    color: #5629bd;
+
+    box-shadow:
+        0 5px 12px rgba(0, 0, 0, 0.15);
+}
+
+
+/* =========================
+   ANIMACIONES
+   ========================= */
+
+/* Entrada de la página */
+
+@keyframes aparecer {
+
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* Movimiento suave del botón */
+
+@keyframes flotar {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-7px);
+    }
+}
+
+
+/* Entrada del título */
+
+@keyframes titulo {
+
+    0% {
+        transform: scale(0.6) rotate(-5deg);
+        opacity: 0;
+    }
+
+    70% {
+        transform: scale(1.08) rotate(2deg);
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+
+/* =========================
+   RESPONSIVE - TABLETS
+   ========================= */
+
+@media (max-width: 768px) {
+
+    body {
+        padding: 25px 15px;
+    }
+
+    .contenedor {
+        max-width: 500px;
+    }
+
+    h1 {
+        font-size: 34px;
+    }
+}
+
+
+/* =========================
+   RESPONSIVE - CELULARES
+   ========================= */
+
+@media (max-width: 480px) {
+
+    body {
+        padding: 20px 10px;
+    }
+
+    .tarjeta {
+        padding: 20px 13px;
+
+        border-radius: 22px;
+    }
+
+    h1 {
+        font-size: 28px;
+
+        margin-bottom: 18px;
+    }
+
+    .boton {
+        width: 100%;
+
+        font-size: 19px;
+
+        padding: 14px 20px;
+    }
+
+    table {
+        font-size: 16px;
+
+        border-spacing: 0 6px;
+    }
+
+    th {
+        font-size: 16px;
+
+        padding: 12px 5px;
+    }
+
+    td {
+        font-size: 16px;
+
+        padding: 11px 5px;
+    }
+
+    td:last-child {
+        font-size: 18px;
+    }
+}
+
+
+/* =========================
+   ACCESIBILIDAD
+   ========================= */
+
+/*
+   Si el usuario tiene desactivadas
+   las animaciones en su dispositivo,
+   también las quitamos aquí.
+*/
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation: none !important;
+        transition: none !important;
+    }
+}
+
+/* =========================
+   PIE DE PÁGINA
+   ========================= */
+
+.pie-pagina {
+    margin-top: 35px;
+
+    padding: 14px 25px;
+
+    background: linear-gradient(
+        135deg,
+        #ff8fc7,
+        #ffad80,
+        #ffd85c
+    );
+
+    border: 4px solid white;
+    border-radius: 25px;
+
+    box-shadow:
+        0 7px 0 rgba(108, 99, 255, 0.35),
+        0 12px 20px rgba(0, 0, 0, 0.15);
+
+    font-size: 18px;
+    font-weight: 600;
+
+    color: white;
+
+    width: fit-content;
+    max-width: 100%;
+
+    text-align: center;
+
+    text-shadow:
+        1px 1px 2px rgba(0, 0, 0, 0.25);
+
+    animation: aparecerPie 1s ease;
+}
+
+.pie-pagina p {
+    margin: 0;
+}
+
+.pie-pagina span {
+    display: inline-block;
+
+    color: #6247d7;
+    background-color: #ffffff;
+
+    padding: 5px 12px;
+
+    margin-left: 5px;
+
+    border-radius: 15px;
+
+    font-size: 20px;
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    text-shadow: none;
+
+    transition:
+        transform 0.2s ease,
+        background-color 0.2s ease;
+}
+
+.pie-pagina span:hover {
+    transform: rotate(-3deg) scale(1.1);
+    background-color: #fff3a8;
+}
+
+@keyframes aparecerPie {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive */
+
+@media (max-width: 480px) {
+
+    .pie-pagina {
+        font-size: 15px;
+        padding: 14px 10px;
+    }
+
+    .pie-pagina span {
+        font-size: 17px;
+        margin-top: 5px;
+    }
+}
