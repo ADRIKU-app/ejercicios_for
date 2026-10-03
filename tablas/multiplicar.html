@@ -3,57 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tabla del 3</title>
+    <title>Tablas de multiplicar</title>
     <link rel="stylesheet" href="multiplicar.css">
 </head>
 <body>
 
-    <main class="contenedor" id="contenedor">
+    <main class="contenedor">
 
-        <div class="grupo-entrada">
-            <label for="numero-tabla" class="etiqueta-entrada">
-                ¿Qué tabla quieres practicar? ✏️
-            </label>
+        <section class="panel-practica" aria-labelledby="titulo-principal">
+            <h1 id="titulo-principal">Practica las tablas</h1>
 
-            <input
-                type="text"
-                id="numero-tabla"
-                class="caja-texto"
-                placeholder="Escribe un número"
-                autocomplete="off"
-            >
-        </div>
+            <p class="instruccion">
+                Escribe el número de la tabla que quieres practicar y luego presiona
+                <strong>PROBAR</strong>.
+            </p>
 
-        <a href="#tabla" class="boton" id="probar" onclick="generarTablas()">PROBAR</a>
+            <div class="grupo-entrada">
+                <label for="numero-tabla" class="etiqueta-entrada">
+                    ¿Qué tabla quieres practicar? ✏️
+                </label>
 
-        <section id="tabla" class="tarjeta">
+                <input
+                    type="text"
+                    id="numero-tabla"
+                    class="caja-texto"
+                    placeholder="Ejemplo: 8"
+                    inputmode="numeric"
+                    autocomplete="off"
+                    aria-describedby="ayuda-entrada"
+                >
 
-            <h1>Tabla del 3</h1>
-
-            <div class="tabla-div">
-
-                <!-- Encabezado -->
-                <div class="fila encabezado">
-                    <div class="celda">Operación</div>
-                    <div class="celda">Resultado</div>
-                </div>
-
-                <!-- Contenido -->
-                <div class="tabla">
-                    <div class="fila">3 × 1 = 3</div>
-                    <div class="fila">3 × 2 = 6</div>
-                    <div class="fila">3 × 3 = 9</div>
-                    <div class="fila">3 × 4 = 12</div>
-                    <div class="fila">3 × 5 = 15</div>
-                    <div class="fila">3 × 6 = 18</div>
-                    <div class="fila">3 × 7 = 21</div>
-                    <div class="fila">3 × 8 = 24</div>
-                    <div class="fila">3 × 9 = 27</div>
-                    <div class="fila">3 × 10 = 30</div>
-                </div>
-
+                <p id="ayuda-entrada" class="texto-ayuda">
+                    Puedes escribir cualquier número, por ejemplo 3, 5 u 8.
+                </p>
             </div>
 
+            <button type="button" class="boton" id="probar" onclick="generarTablas()">
+                PROBAR
+            </button>
+
+            <p id="mensaje" class="mensaje-ayuda" aria-live="polite"></p>
+        </section>
+
+        <section id="resultado-tabla" class="resultado-tabla" aria-live="polite">
+            <div class="estado-inicial">
+                <span class="estado-icono">🔢</span>
+                <p>Tu tabla aparecerá aquí.</p>
+            </div>
         </section>
 
     </main>
