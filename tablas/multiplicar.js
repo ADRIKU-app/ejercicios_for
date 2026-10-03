@@ -1,10 +1,11 @@
 function generarTablas() {
+    let valorCaja = document.getElementById("numero-tabla").value;
     let contenedor = document.getElementById("contenedor");
     let contenido = "";
 
     contenido += `
         <section id="tabla" class="tarjeta">
-            <h1>Tabla del 5</h1>
+            <h1>Tabla del ${valorCaja}</h1>
 
             <div class="tabla-div">
                 <div class="fila encabezado">
@@ -16,7 +17,7 @@ function generarTablas() {
     `;
 
     for (let i = 1; i <= 10; i++) {
-        contenido += `<div class="fila">5 × ${i} = ${5 * i}</div>`;
+        contenido += `<div class="fila">${valorCaja} × ${i} = ${valorCaja * i}</div>`;
     }
 
     contenido += `
